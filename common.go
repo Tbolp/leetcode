@@ -6,6 +6,13 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// TreeNode Definition for a binary tree node.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 func createListNode(vals []int) *ListNode {
 	if len(vals) == 0 {
 		return nil

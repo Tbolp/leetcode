@@ -28,3 +28,11 @@ func TestUsage4(t *testing.T) {
 func TestUsage5(t *testing.T) {
 	nextPermutation([]int{3, 2, 1})
 }
+
+func TestUsage6(t *testing.T) {
+	reverseWords("hi w")
+}
+
+func TestUsage7(t *testing.T) {
+	romanToInt("IV")
+}
