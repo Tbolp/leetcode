@@ -36,3 +36,11 @@ func TestUsage6(t *testing.T) {
 func TestUsage7(t *testing.T) {
 	romanToInt("IV")
 }
+
+func TestUsage8(t *testing.T) {
+	solveNQueens(4)
+}
+
+func TestUsage9(t *testing.T) {
+	addBinary("11", "1")
+}
