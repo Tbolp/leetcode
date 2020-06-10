@@ -44,3 +44,14 @@ func TestUsage8(t *testing.T) {
 func TestUsage9(t *testing.T) {
 	addBinary("11", "1")
 }
+
+func TestUsage10(t *testing.T) {
+	tree := Constructor()
+	tree.Insert("apple")
+	t.Error(tree.Search("apple"), true)
+}
+
+func TestUsage11(t *testing.T) {
+	canFinish(3, [][]int{{0, 1}, {0, 2}, {1, 2}})
+	canFinish(8, [][]int{{1, 0}, {2, 6}, {1, 7}, {6, 4}, {7, 0}, {0, 5}})
+}
