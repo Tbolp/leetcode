@@ -26,8 +26,8 @@ func swapnearest(nums []int) bool {
 
 func nextPermutation(nums []int) {
 	for i := len(nums) - 1; i >= 0; i-- {
-		if swapnearest(nums[i:len(nums)]) {
-			sort.Ints(nums[i+1 : len(nums)])
+		if swapnearest(nums[i:]) {
+			sort.Ints(nums[i+1:])
 			return
 		}
 	}

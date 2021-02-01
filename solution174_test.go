@@ -2,6 +2,7 @@ package leetcode
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
 
@@ -45,11 +46,27 @@ func choose(x, y int, path, dungeon [][]int, curhealth int, minhealth *int, minp
 }
 
 func calculateMinimumHP(dungeon [][]int) int {
-
+	dp := [][]int{}
+	for i := 0; i < len(dungeon); i++ {
+		dp = append(dp, make([]int, len(dungeon[0])))
+	}
+	return getMin(0, 0, dp, dungeon)
 }
 
-func getMin(x, y int) {
-
+func getMin(x, y int, dp [][]int, dungeon [][]int) int {
+	if dp[x][y] != 0 {
+		return dp[x][y]
+	}
+	if x == len(dungeon)-1 && y == len(dungeon[0])-1 {
+		dp[x][y] = int(math.Max(float64(1), float64(-dungeon[x][y]+1)))
+	} else if x < len(dungeon)-1 && y < len(dungeon[0])-1 {
+		dp[x][y] = int(math.Max(1, float64(int(math.Min(float64(getMin(x+1, y, dp, dungeon)), float64(getMin(x, y+1, dp, dungeon))))-dungeon[x][y])))
+	} else if x < len(dungeon)-1 {
+		dp[x][y] = int(math.Max(1, float64(getMin(x+1, y, dp, dungeon)-dungeon[x][y])))
+	} else {
+		dp[x][y] = int(math.Max(1, float64(getMin(x, y+1, dp, dungeon)-dungeon[x][y])))
+	}
+	return dp[x][y]
 }
 
 func Test_calculateMinimumHP_Usage1(t *testing.T) {
