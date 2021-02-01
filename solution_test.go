@@ -55,8 +55,3 @@ func TestUsage11(t *testing.T) {
 	canFinish(3, [][]int{{0, 1}, {0, 2}, {1, 2}})
 	canFinish(8, [][]int{{1, 0}, {2, 6}, {1, 7}, {6, 4}, {7, 0}, {0, 5}})
 }
-
-func TestUsage12(t *testing.T) {
-	// findMedianSortedArrays([]int{1, 3}, []int{2})
-	findMedianSortedArrays([]int{1}, []int{2, 3, 4, 5, 6, 7})
-}

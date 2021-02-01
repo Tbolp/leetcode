@@ -26,3 +26,14 @@ func createListNode(vals []int) *ListNode {
 	}
 	return start.Next
 }
+
+func createTwoDimArray(data []int, m, n int) [][]int {
+	ret := [][]int{}
+	for i := 0; i < m; i++ {
+		ret = append(ret, make([]int, n))
+		for j := 0; j < n; j++ {
+			ret[i][j] = data[i*n+j]
+		}
+	}
+	return ret
+}
