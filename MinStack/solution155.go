@@ -1,4 +1,4 @@
-package leetcode
+package minstack
 
 import "math"
 
@@ -12,7 +12,7 @@ type MinStack struct {
 	top *element
 }
 
-func (this *MinStack) Constructor() MinStack {
+func Constructor() MinStack {
 	return MinStack{}
 }
 

@@ -37,3 +37,10 @@ func createTwoDimArray(data []int, m, n int) [][]int {
 	}
 	return ret
 }
+
+func minInt(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
