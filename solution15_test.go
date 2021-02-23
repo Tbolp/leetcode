@@ -54,15 +54,27 @@ func threeSum(nums []int) [][]int {
 		nums = append(nums, k)
 	}
 	for i, x := range nums {
-		for _, y := range nums[i+1:] {
+		mm := map[int]interface{}{}
+		for _, y := range nums[i:] {
+			if _, ok := mm[y]; ok {
+				continue
+			}
+			mm[y] = nil
 			z := -x - y
-			if _, ok := m[z]; ok {
-				if y == z && m[z] < 2 {
-					break
-				} else {
-					res = append(res, []int{x, y, z})
-					break
+			if _, ok := mm[z]; ok {
+				if x == y && y == z && m[x] < 3 {
+					continue
 				}
+				if x == y && m[x] < 2 {
+					continue
+				}
+				if x == z && m[x] < 2 {
+					continue
+				}
+				if y == z && m[y] < 2 {
+					continue
+				}
+				res = append(res, []int{x, y, z})
 			}
 		}
 	}
