@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func threeSum(nums []int) [][]int {
+func threeSum_1(nums []int) [][]int {
 	sort.Ints(nums)
 	aSet := nums
 	bSet := nums
@@ -41,6 +41,32 @@ func threeSum(nums []int) [][]int {
 		aSet = aSet[1:]
 	}
 	return ret
+}
+
+func threeSum(nums []int) [][]int {
+	res := [][]int{}
+	m := map[int]int{}
+	for _, v := range nums {
+		m[v]++
+	}
+	nums = []int{}
+	for k := range m {
+		nums = append(nums, k)
+	}
+	for i, x := range nums {
+		for _, y := range nums[i+1:] {
+			z := -x - y
+			if _, ok := m[z]; ok {
+				if y == z && m[z] < 2 {
+					break
+				} else {
+					res = append(res, []int{x, y, z})
+					break
+				}
+			}
+		}
+	}
+	return res
 }
 
 func Test_threeSum_Usage1(t *testing.T) {
