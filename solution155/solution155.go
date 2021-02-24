@@ -1,4 +1,4 @@
-package minstack
+package solution155
 
 import "math"
 

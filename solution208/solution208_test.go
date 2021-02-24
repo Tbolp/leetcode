@@ -1,4 +1,4 @@
-package trie
+package solution208
 
 import "testing"
 

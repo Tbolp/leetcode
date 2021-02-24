@@ -1,4 +1,4 @@
-package numarray
+package solution303
 
 type NumArray struct {
 	nums []int

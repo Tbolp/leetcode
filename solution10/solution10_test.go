@@ -1,10 +1,10 @@
-package leetcode
+package solution10
 
 import (
 	"testing"
 )
 
-func isMatch_1(s string, p string) bool {
+func isMatch(s string, p string) bool {
 	reg := RegularExpression{}
 	res := reg.Match(s, p)
 	// for _, v := range reg.cache {
@@ -117,49 +117,49 @@ func (this *RegularExpression) getValue(x int, y int) bool {
 }
 
 func Test_isMatch_1_Usage1(t *testing.T) {
-	if isMatch_1("aa", "a") == true {
+	if isMatch("aa", "a") == true {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage2(t *testing.T) {
-	if isMatch_1("aa", "a*") == false {
+	if isMatch("aa", "a*") == false {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage3(t *testing.T) {
-	if isMatch_1("ab", ".*") == false {
+	if isMatch("ab", ".*") == false {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage4(t *testing.T) {
-	if isMatch_1("aab", "c*a*b") == false {
+	if isMatch("aab", "c*a*b") == false {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage5(t *testing.T) {
-	if isMatch_1("mississippi", "mis*is*p*.") == true {
+	if isMatch("mississippi", "mis*is*p*.") == true {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage6(t *testing.T) {
-	if isMatch_1("ab", ".*c") == true {
+	if isMatch("ab", ".*c") == true {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage7(t *testing.T) {
-	if isMatch_1("aaa", "aaaa") == true {
+	if isMatch("aaa", "aaaa") == true {
 		t.Fail()
 	}
 }
 
 func Test_isMatch_1_Usage8(t *testing.T) {
-	if isMatch_1("aasdfasdfasdfasdfas", "aasdf.*asdf.*asdf.*asdf.*s") == false {
+	if isMatch("aasdfasdfasdfasdfas", "aasdf.*asdf.*asdf.*asdf.*s") == false {
 		t.Fail()
 	}
 }
